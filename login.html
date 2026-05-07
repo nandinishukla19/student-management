@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Student Management</title>
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body class="auth-page">
+
+    <!-- ================= BACKGROUND GLOW ================= -->
+
+    <div class="bg-glow"></div>
+
+    <!-- ================= AUTH CONTAINER ================= -->
+
+    <main class="auth-container">
+
+        <!-- Left Side -->
+
+        <section class="auth-left">
+
+            <p class="tag">
+                Welcome Back 👋
+            </p>
+
+            <h1>
+
+                Login To Your
+                <span>Student Dashboard</span>
+
+            </h1>
+
+            <p>
+
+                Access your student management system,
+                manage records, and continue your work
+                securely and efficiently.
+
+            </p>
+
+            <div class="auth-features">
+
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    Secure Authentication
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-database"></i>
+                    Local Data Storage
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-chart-simple"></i>
+                    Smart Dashboard
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Right Side -->
+
+        <section class="auth-right">
+
+            <div class="auth-card">
+
+                <h2>
+                    Login
+                </h2>
+
+                <p class="auth-subtitle">
+
+                    Enter your credentials to continue
+
+                </p>
+
+                <!-- Username -->
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="loginUsername"
+                        placeholder="Username">
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Password">
+
+                </div>
+
+                <!-- Login Button -->
+
+                <button
+                    class="auth-btn"
+                    onclick="login()">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Login
+
+                </button>
+
+                <!-- Register Link -->
+
+                <p class="switch-text">
+
+                    Don't have an account?
+
+                    <a href="register.html">
+
+                        Register
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Crypto JS -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js">
+
+    </script>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

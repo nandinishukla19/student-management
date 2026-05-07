@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Register | Student Management</title>
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body class="auth-page">
+
+    <!-- ================= BACKGROUND GLOW ================= -->
+
+    <div class="bg-glow"></div>
+
+    <!-- ================= AUTH CONTAINER ================= -->
+
+    <main class="auth-container">
+
+        <!-- Left Side -->
+
+        <section class="auth-left">
+
+            <p class="tag">
+                Create Your Account 🚀
+            </p>
+
+            <h1>
+
+                Join The
+                <span>Student Dashboard</span>
+
+            </h1>
+
+            <p>
+
+                Register to access the student
+                management system and start managing
+                records with a modern dashboard.
+
+            </p>
+
+            <div class="auth-features">
+
+                <div>
+                    <i class="fa-solid fa-user-shield"></i>
+                    Admin & User Roles
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-lock"></i>
+                    Secure Password Storage
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-laptop-code"></i>
+                    Modern Responsive UI
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- Right Side -->
+
+        <section class="auth-right">
+
+            <div class="auth-card">
+
+                <h2>
+                    Register
+                </h2>
+
+                <p class="auth-subtitle">
+
+                    Create your account to continue
+
+                </p>
+
+                <!-- Username -->
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        id="username"
+                        placeholder="Username">
+
+                </div>
+
+                <!-- Password -->
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Password">
+
+                </div>
+
+                <!-- Role -->
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-user-gear"></i>
+
+                    <select id="role">
+
+                        <option value="user">
+
+                            User
+
+                        </option>
+
+                        <option value="admin">
+
+                            Admin
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- Register Button -->
+
+                <button
+                    class="auth-btn"
+                    onclick="registerUser()">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Register
+
+                </button>
+
+                <!-- Login Link -->
+
+                <p class="switch-text">
+
+                    Already have an account?
+
+                    <a href="login.html">
+
+                        Login
+
+                    </a>
+
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Crypto JS -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js">
+
+    </script>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

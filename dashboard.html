@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | Student Management</title>
+
+    <!-- Google Font -->
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+        href="style.css">
+
+</head>
+
+<body class="dashboard-page">
+
+    <!-- ================= BACKGROUND GLOW ================= -->
+
+    <div class="bg-glow"></div>
+
+    <!-- ================= TOPBAR ================= -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <h2>
+                🎓 Student Dashboard
+            </h2>
+
+            <p>
+
+                Manage students efficiently
+
+            </p>
+
+        </div>
+
+        <div class="topbar-right">
+
+            <button class="theme-btn"
+                onclick="toggleDarkMode()">
+
+                🌙
+
+            </button>
+
+            <button class="logout-btn"
+                onclick="logout()">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                Logout
+
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- ================= DASHBOARD STATS ================= -->
+
+    <section class="dashboard-stats">
+
+        <div class="stats-card">
+
+            <div class="stats-icon">
+
+                <i class="fa-solid fa-users"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Total Students
+                </h3>
+
+                <p id="totalStudents">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="stats-card">
+
+            <div class="stats-icon">
+
+                <i class="fa-solid fa-chart-column"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Average Age
+                </h3>
+
+                <p id="avgAge">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="stats-card">
+
+            <div class="stats-icon">
+
+                <i class="fa-solid fa-book"></i>
+
+            </div>
+
+            <div>
+
+                <h3>
+                    Courses
+                </h3>
+
+                <p id="totalCourses">
+                    0
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ================= MAIN DASHBOARD ================= -->
+
+    <main class="dashboard-container">
+
+        <!-- ================= LEFT SIDE ================= -->
+
+        <section class="dashboard-left">
+
+            <!-- Student Form -->
+
+            <div id="adminControls"
+                class="form-card">
+
+                <div class="section-header">
+
+                    <h2>
+                        Add Student
+                    </h2>
+
+                    <p>
+
+                        Enter student details below
+
+                    </p>
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        id="name"
+                        placeholder="Student Name">
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    <input
+                        id="age"
+                        type="number"
+                        placeholder="Student Age">
+
+                </div>
+
+                <div class="input-group">
+
+                    <i class="fa-solid fa-graduation-cap"></i>
+
+                    <input
+                        id="course"
+                        placeholder="Course Name">
+
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="form-buttons">
+
+                    <button class="primary-btn"
+                        onclick="addStudent()">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Student
+
+                    </button>
+
+                    <button
+                        id="updateBtn"
+                        class="secondary-btn"
+                        onclick="updateStudent()"
+                        style="display:none;">
+
+                        <i class="fa-solid fa-pen"></i>
+
+                        Update Student
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- Search -->
+
+            <div class="search-box">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <input
+                    id="search"
+                    placeholder="Search students..."
+                    onkeyup="searchStudent()">
+
+            </div>
+
+        </section>
+
+        <!-- ================= RIGHT SIDE ================= -->
+
+        <section class="dashboard-right">
+
+            <!-- Charts -->
+
+            <div class="chart-card">
+
+                <h2>
+                    Student Analytics
+                </h2>
+
+                <canvas id="courseChart"></canvas>
+
+            </div>
+
+            <div class="chart-card">
+
+                <h2>
+                    Age Distribution
+                </h2>
+
+                <canvas id="ageChart"></canvas>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ================= STUDENT TABLE ================= -->
+
+    <section class="table-section">
+
+        <div class="table-header">
+
+            <h2>
+                Student Records
+            </h2>
+
+            <p>
+
+                View and manage all students
+
+            </p>
+
+        </div>
+
+        <!-- Empty Message -->
+
+        <div id="emptyMsg"
+            class="empty-state">
+
+            <i class="fa-regular fa-face-frown"></i>
+
+            <h3>
+                No Students Added Yet
+            </h3>
+
+            <p>
+
+                Add students to display records here.
+
+            </p>
+
+        </div>
+
+        <!-- Table -->
+
+        <div class="table-wrapper">
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Name
+                        </th>
+
+                        <th>
+                            Age
+                        </th>
+
+                        <th>
+                            Course
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody id="studentList">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+    <!-- ================= TOAST ================= -->
+
+    <div id="toast"></div>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+
+            © 2026 Student Management System | Built by Nandini Shukla
+
+        </p>
+
+    </footer>
+
+    <!-- Chart JS -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js">
+
+    </script>
+
+    <!-- JS -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
